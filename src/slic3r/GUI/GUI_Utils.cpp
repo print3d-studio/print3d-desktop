@@ -311,11 +311,11 @@ bool confirm_save_with_unresolved_plugins(wxWindow* parent, const ConfigBase& co
     // TRN %1% is the list of affected settings built above, one "label: value" per line.
     const wxString message =
         subject == SaveSubject::Preset
-            ? format_wxstr(_L("The following settings refer to plugins Orca Slicer can't identify on this computer:\n\n%1%\n\n"
+            ? format_wxstr(_L("The following settings refer to plugins PRINT3D can't identify on this computer:\n\n%1%\n\n"
                               "If you save anyway, the preset won't keep the plugin references for these settings. On another computer, "
                               "Orca Slicer won't know which plugins to offer, and the settings may not work there."),
                            rows)
-            : format_wxstr(_L("The following settings refer to plugins Orca Slicer can't identify on this computer:\n\n%1%\n\n"
+            : format_wxstr(_L("The following settings refer to plugins PRINT3D can't identify on this computer:\n\n%1%\n\n"
                               "If you save anyway, the project won't keep the plugin references for these settings. On another computer, "
                               "Orca Slicer won't know which plugins to offer, and the settings may not work there."),
                            rows);
@@ -338,7 +338,7 @@ bool confirm_save_presets_with_unresolved_plugins(wxWindow* parent, const std::v
 
     // TRN %1% is the list of affected presets and settings built above, one "preset — setting: value" per line.
     const wxString message = format_wxstr(
-        _L("The presets being saved refer to plugins Orca Slicer can't identify on this computer:\n\n%1%\n\n"
+        _L("The presets being saved refer to plugins PRINT3D can't identify on this computer:\n\n%1%\n\n"
            "If you save anyway, the presets won't keep the plugin references for these settings. On another computer, "
            "Orca Slicer won't know which plugins to offer, and the settings may not work there."),
         rows);

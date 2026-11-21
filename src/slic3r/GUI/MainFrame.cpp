@@ -1611,7 +1611,7 @@ void MainFrame::init_tabpanel() {
         //BBS add pages
     m_monitor_page = new LazyPage<MonitorPanel>(m_tabpanel, TAB_ID_MONITOR, 20);
     m_lazy_pages.push_back(m_monitor_page);
-    m_tabpanel->AddPage(TAB_ID_MONITOR, m_monitor_page, _L("Device"), "tab_monitor_active");
+    m_tabpanel->AddPage(TAB_ID_MONITOR, m_monitor_page, _L("Printer"), "tab_monitor_active");
 
     m_printer_view_page = new LazyPage<PrinterWebView>(m_tabpanel, TAB_ID_MONITOR_WEB, 50, [this](wxWindow* parent) {
         auto* view = new PrinterWebView(parent);
@@ -1691,7 +1691,7 @@ void MainFrame::show_device(bool should_use_native) {
             }
             m_monitor_page->Show(false);
             m_tabpanel->InsertPage(m_tabpanel->PositionAfter({TAB_ID_PREVIEW}), TAB_ID_MONITOR, m_monitor_page,
-                                   _L("Device"), "tab_monitor_active");
+                                   _L("Printer"), "tab_monitor_active");
         }
 
         if (wxGetApp().is_enable_multi_machine()) {
@@ -1746,7 +1746,7 @@ void MainFrame::show_device(bool should_use_native) {
         // Insert monitor page
         m_monitor_page->Show(false);
         m_tabpanel->InsertPage(m_tabpanel->PositionAfter({TAB_ID_PREVIEW}), TAB_ID_MONITOR, m_monitor_page,
-                               _L("Device"), "tab_monitor_active");
+                               _L("Printer"), "tab_monitor_active");
 
         if (wxGetApp().is_enable_multi_machine()) {
             // TODO: change the bitmap
@@ -1783,7 +1783,7 @@ void MainFrame::show_device(bool should_use_native) {
         }
         m_printer_view_page->Show(false);
         m_tabpanel->InsertPage(m_tabpanel->PositionAfter({TAB_ID_PREVIEW}), TAB_ID_MONITOR, m_printer_view_page,
-                               _L("Device"), "tab_monitor_active");
+                               _L("Printer"), "tab_monitor_active");
     }
     fit_tab_labels(); // ORCA on printer change
     m_plugin_pages->relayout(); // re-sync plugin tabs against the native tabs just mutated above
@@ -2949,7 +2949,7 @@ wxMenu* MainFrame::generate_help_menu()
         });
 
     // Report a bug
-    //append_menu_item(helpMenu, wxID_ANY, _L("Report Bug(TODO)"), _L("Report a bug of OrcaSlicer"),
+    //append_menu_item(helpMenu, wxID_ANY, _L("Report Bug(TODO)"), _L("Report a bug of PRINT3D"),
     //    [](wxCommandEvent&) {
     //        //TODO
     //    });

@@ -663,7 +663,7 @@ const std::vector<MenuFactory::HandyModel>& MenuFactory::handy_models()
     static const std::vector<HandyModel> models = {
         {"orca_cube",           L("Orca Cube"),           {"OrcaCube_v2.drc", "OrcaPlug_v2.drc"},                    true},
         {"orcasliced_combo",    L("OrcaSliced Combo"),    {"OrcaSliced.3mf", "OrcaCube_v2.drc", "OrcaPlug_v2.drc"},  true},
-        {"orca_badge",          L("Orca Badge"),          {"OrcaBadge.3mf"}},
+        {"orca_badge",          L("PRINT3D Badge"),          {"OrcaBadge.3mf"}},
         {"orca_tolerance_test", L("Orca Tolerance Test"), {"OrcaToleranceTest.drc"}},
         {"3dbenchy",            L("3DBenchy"),            {"3DBenchy.drc"}},
         {"cali_cat",            L("Cali Cat"),            {"calicat.drc"}},
