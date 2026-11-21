@@ -154,12 +154,12 @@ void ButtonsListCtrl::SetSelection(int sel)
     m_selection = sel;
 
     StateColor bg_color = StateColor(
-        std::pair{wxColour(34, 163, 92), (int) StateColor::Hovered},
-        std::pair{wxColour(34, 163, 92), (int) StateColor::Normal});
+        std::pair{wxColour(34, 38, 41), (int) StateColor::Hovered},
+        std::pair{wxColour(28, 32, 34), (int) StateColor::Normal});
     m_pageButtons[m_selection]->SetBackgroundColor(bg_color);
 
     StateColor text_color = StateColor(
-        std::pair{wxColour(254, 254, 254), (int) StateColor::Normal}
+        std::pair{wxColour(91, 227, 138), (int) StateColor::Normal}
         );
     m_pageButtons[m_selection]->SetTextColor(text_color);
     

@@ -1789,8 +1789,7 @@ void PartPlate::calc_vertex_for_icons_background(int icon_count, GLModel &buffer
 
 void PartPlate::render_background(bool force_default_color)
 {
-	//return directly for current plate
-	if (m_selected && !force_default_color) return;
+	// PRINT3D: the current plate is filled too (copper surface)
 
 	// draw background
 	glsafe(::glDepthMask(GL_FALSE));

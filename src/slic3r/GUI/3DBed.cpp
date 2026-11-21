@@ -202,8 +202,8 @@ const float Bed3D::Axes::DefaultTipRadius = 2.5f * Bed3D::Axes::DefaultStemRadiu
 const float Bed3D::Axes::DefaultTipLength = 5.0f;
 
 // ORCA make bed colors accessable for 2D bed
-ColorRGBA Bed3D::DEFAULT_MODEL_COLOR             = { 0.3255f, 0.337f, 0.337f, 1.0f };
-ColorRGBA Bed3D::DEFAULT_MODEL_COLOR_DARK        = { 0.085f, 0.090f, 0.095f, 1.0f };
+ColorRGBA Bed3D::DEFAULT_MODEL_COLOR             = { 0.36f, 0.22f, 0.13f, 1.0f }; // PRINT3D copper plate
+ColorRGBA Bed3D::DEFAULT_MODEL_COLOR_DARK        = { 0.235f, 0.141f, 0.083f, 1.0f };
 ColorRGBA Bed3D::DEFAULT_SOLID_GRID_COLOR        = { 0.9f, 0.9f, 0.9f, 1.0f };
 ColorRGBA Bed3D::DEFAULT_TRANSPARENT_GRID_COLOR  = { 0.9f, 0.9f, 0.9f, 0.6f };
 
