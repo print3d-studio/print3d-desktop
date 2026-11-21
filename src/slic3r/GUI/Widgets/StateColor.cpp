@@ -12,7 +12,7 @@ static bool operator<(wxColour const &l, wxColour const &r) { return l.GetRGBA()
 
 // PRINT3D: dark values below are the PRINT3D palette (near-black surfaces, green accent, copper secondary).
 static std::map<wxColour, wxColour> gDarkColors{
-    {"#009688", "#22A35C"}, // rgb(0, 150, 136)    ORCA color
+    {"#22A35C", "#22A35C"}, // rgb(34, 163, 92)    ORCA color
     {"#1F8EEA", "#2778D2"}, // rgb(31, 142, 234)   ???
     {"#FF6F00", "#FF9A4D"}, // rgb(255, 111, 0)    Secondary color
     {"#D01B1B", "#BB2A3A"}, // rgb(208, 27, 27)    ???
@@ -20,7 +20,7 @@ static std::map<wxColour, wxColour> gDarkColors{
     {"#DFDFDF", "#1D2023"}, // rgb(223, 223, 223)  Button Background color
     {"#D4D4D4", "#2A2E32"}, // rgb(212, 212, 212)  Button Background color on Hover
     {"#6B6A6A", "#A3A9AD"}, // rgb(107, 107, 106)  Button Dimmed text
-    {"#26A69A", "#2EB869"}, // rgb(0, 150, 136)    Button Confirm Color hover | ORCA Color Hover
+    {"#2EB869", "#2EB869"}, // rgb(34, 163, 92)    Button Confirm Color hover | ORCA Color Hover
     {"#6B6B6A", "#A3A9AC"}, // rgb(107, 107, 106)  Input box side text
     {"#2C2C2E", "#B4BABC"}, // rgb(44, 44, 46)     ???
     {"#6B6B6B", "#6F767A"}, // rgb(107, 107, 107)  Disabled Text
