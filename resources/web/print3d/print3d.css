@@ -1,0 +1,37 @@
+/* PRINT3D shared look for the app's web screens: type, colours, glass cards, buttons.
+   Dark is the default; body.p3-light switches the tokens. */
+@font-face{font-family:"P3 Inter";src:url("fonts/inter.woff2") format("woff2");font-weight:100 900;font-display:block}
+@font-face{font-family:"P3 Michroma";src:url("fonts/michroma.woff2") format("woff2");font-weight:400;font-display:block}
+:root{
+  --p3-bg:#050607;--p3-text:#E9ECEE;--p3-mut:#A3A9AD;--p3-dim:#6F767B;
+  --p3-line:rgba(255,255,255,.10);--p3-line2:rgba(255,255,255,.22);
+  --p3-ctl:rgba(255,255,255,.055);--p3-field:rgba(0,0,0,.28);
+  --p3-acc:#2EB869;--p3-acc-text:#5BE38A;--p3-acc-bg:rgba(91,227,138,.10);--p3-warn:#FF9A4D;
+  --p3-card:linear-gradient(160deg,rgba(255,255,255,.075),rgba(255,255,255,.018));
+  --p3-shadow:inset 0 1px 0 rgba(255,255,255,.10),0 24px 60px rgba(0,0,0,.45);
+  --p3-glow:radial-gradient(1100px 700px at 12% 0%,rgba(46,184,105,.07),transparent 60%),radial-gradient(900px 700px at 100% 100%,rgba(255,154,77,.045),transparent 60%);
+  --p3-sans:"P3 Inter",-apple-system,"Segoe UI",system-ui,sans-serif;--p3-display:"P3 Michroma","P3 Inter",sans-serif;
+}
+body.p3-light{
+  --p3-bg:#F3F4F5;--p3-text:#15181A;--p3-mut:#5C6368;--p3-dim:#8A9196;
+  --p3-line:rgba(0,0,0,.10);--p3-line2:rgba(0,0,0,.24);
+  --p3-ctl:rgba(0,0,0,.035);--p3-field:rgba(255,255,255,.7);
+  --p3-acc:#22A35C;--p3-acc-text:#1B8249;--p3-acc-bg:rgba(34,163,92,.10);--p3-warn:#C8641B;
+  --p3-card:linear-gradient(160deg,#FFFFFF,#FAFBFB);
+  --p3-shadow:inset 0 1px 0 #fff,0 14px 34px rgba(20,30,40,.08);
+  --p3-glow:radial-gradient(1100px 700px at 12% 0%,rgba(34,163,92,.07),transparent 60%);
+}
+html,body.p3{margin:0;height:100%}
+body.p3{background:var(--p3-bg);background-image:var(--p3-glow);background-attachment:fixed;color:var(--p3-text);font-family:var(--p3-sans);font-size:14px;line-height:1.45;-webkit-font-smoothing:antialiased;overflow:hidden}
+.p3-page{height:100%;overflow:auto;box-sizing:border-box;padding:26px 32px 40px}
+.p3-mid{max-width:1040px;margin:0 auto}
+.p3-title{font-family:var(--p3-display);font-weight:400;font-size:22px;letter-spacing:.06em;text-transform:uppercase;margin:0}
+.p3-lead{color:var(--p3-mut);margin:6px 0 0;max-width:640px}
+.p3-h{font-family:var(--p3-display);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--p3-mut)}
+.p3-card{background:var(--p3-card);border:1px solid var(--p3-line);border-radius:24px;box-shadow:var(--p3-shadow);padding:18px 20px;box-sizing:border-box}
+.p3-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:38px;padding:0 18px;border-radius:999px;border:1px solid var(--p3-line2);background:var(--p3-ctl);color:var(--p3-text);font:600 13.5px var(--p3-sans);cursor:pointer;white-space:nowrap;user-select:none;transition:border-color .15s,background .15s}
+.p3-btn:hover{border-color:var(--p3-acc-text)}
+.p3-btn.sm{height:30px;padding:0 13px;font-size:12.5px}
+.p3-btn .chev{color:var(--p3-acc-text)}
+.p3-btn.quiet{border-color:var(--p3-line)}
+.p3-scroll::-webkit-scrollbar{width:10px}.p3-scroll::-webkit-scrollbar-thumb{background:var(--p3-line2);border-radius:10px;border:3px solid transparent;background-clip:content-box}

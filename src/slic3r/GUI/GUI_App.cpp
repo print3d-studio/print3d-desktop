@@ -2734,6 +2734,9 @@ void GUI_App::init_app_config()
 {
 	// Profiles for the alpha are stored into the PrusaSlicer-alpha directory to not mix with the current release.
     SetAppName(SLIC3R_APP_KEY);
+    // The name people see (window titles on Linux, the application menu on macOS) is the product
+    // name; the app name above stays the key that the data folders are derived from.
+    SetAppDisplayName(SLIC3R_APP_FULL_NAME);
 //	SetAppName(SLIC3R_APP_KEY "-alpha");
 //  SetAppName(SLIC3R_APP_KEY "-beta");
 //	SetAppDisplayName(SLIC3R_APP_NAME);

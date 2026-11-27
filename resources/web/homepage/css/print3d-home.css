@@ -1,0 +1,43 @@
+/* PRINT3D Home. Loaded after home.css: same ids and classes as before (home.js fills them),
+   new layout and look. */
+#LeftBoard,#MenuArea,#DebugText{display:none !important}
+body.p3{display:block}
+#RightBoard{position:static;width:100%;min-width:0;height:100%;display:block;background:none}
+#ContentBoard{position:static;display:block;height:auto;width:auto;padding:0;background:none;overflow:visible}
+.p3-open{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(0,1fr);gap:12px;margin-top:18px}
+.p3-drop{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;text-align:center;min-height:168px;border-style:dashed;border-color:var(--p3-line2);cursor:pointer;transition:border-color .15s}
+.p3-drop:hover{border-color:var(--p3-acc-text)}
+.p3-drop svg{width:34px;height:34px;stroke:var(--p3-mut);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.p3-drop b{font-size:16px;margin-top:6px}.p3-drop span{color:var(--p3-mut)}
+.p3-side{display:flex;flex-direction:column;gap:10px;justify-content:center}
+.p3-side .p3-row{display:flex;align-items:center;gap:12px}.p3-side .p3-row div{flex:1;min-width:0}
+.p3-side b{display:block;font-size:14px}.p3-side span{color:var(--p3-mut);font-size:12.5px}
+.p3-side hr{border:0;border-top:1px solid var(--p3-line);margin:2px 0;width:100%}
+
+#RecentFileArea{margin:26px 0 0;padding:0;width:auto}
+#RecentTitleBlock{display:flex;align-items:center;height:auto;margin:0 0 12px;padding:0;border:0}
+#RecentTitle{flex:1;font-family:var(--p3-display);font-size:10.5px;font-weight:400;letter-spacing:.14em;text-transform:uppercase;color:var(--p3-mut);line-height:1;padding:0;margin:0}
+#RecentClearAllBtn{position:static;display:block;box-sizing:border-box;height:30px !important;line-height:28px !important;padding:0 13px !important;border-radius:999px;border:1px solid var(--p3-line);background:var(--p3-ctl);color:var(--p3-mut);font:600 12.5px var(--p3-sans);cursor:pointer;margin:0;min-width:0;width:auto}
+#RecentClearAllBtn:hover{color:var(--p3-text);border-color:var(--p3-line2)}
+#FileList{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:12px;height:auto;max-height:none;overflow:visible;padding:0;margin:0;position:static}
+.FileItem{position:relative;width:auto;height:auto;margin:0;padding:10px 10px 12px;float:none;display:block;background:var(--p3-card);border:1px solid var(--p3-line);border-radius:22px;box-shadow:var(--p3-shadow);cursor:pointer;transition:border-color .15s,transform .15s;overflow:hidden}
+.FileItem:hover{border-color:var(--p3-acc-text);transform:translateY(-2px);background:var(--p3-card)}
+.FileTip{position:absolute;inset:0;z-index:1}
+.FileImg{position:relative;width:auto;height:auto;aspect-ratio:1.35;border-radius:14px;overflow:hidden;background:radial-gradient(120% 100% at 50% 0%,rgba(255,255,255,.07),rgba(0,0,0,.25));border:1px solid var(--p3-line);display:flex;align-items:center;justify-content:center;margin:0}
+.FileImg img{max-width:100%;max-height:100%;width:100%;height:100%;object-fit:contain;border-radius:0}
+.FileLogoBadge{display:none}
+.FileNamePack{display:flex;align-items:center;gap:6px;margin:10px 4px 0;padding:0;height:auto}
+.FileName{font:600 13.5px var(--p3-sans);color:var(--p3-text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;line-height:1.3;height:auto;padding:0;margin:0}
+.FileDate{font-size:12px;color:var(--p3-mut);margin:2px 4px 0;padding:0;line-height:1.3;height:auto}
+.FileActions{position:absolute;z-index:2;top:16px;right:16px;left:auto;bottom:auto;display:flex;gap:6px;opacity:0;transition:opacity .15s;width:auto;height:auto;background:none;padding:0;margin:0}
+.FileItem:hover .FileActions{opacity:1}
+.FileActionsReveal,.FileActionsRemove{display:inline-flex;align-items:center;justify-content:center;height:28px;line-height:1;padding:0 11px;border-radius:999px;border:1px solid var(--p3-line2);background:rgba(10,11,12,.86);color:#E9ECEE;font:600 11.5px var(--p3-sans);cursor:pointer;min-width:0;width:auto;margin:0}
+.FileActionsRemove{width:28px;padding:0}
+.FileActionsRemove .icon16{width:14px;height:14px;background-size:14px 14px}
+.FileActionsReveal.ButtonStyleDisabled{display:none}
+
+#P3Empty{display:none;margin-top:0;text-align:center;padding:34px 20px;color:var(--p3-mut)}
+#P3Empty b{display:block;color:var(--p3-text);font-size:15px;margin-bottom:4px}
+body.p3-empty #P3Empty{display:block}
+body.p3-empty #RecentClearAllBtn{display:none !important}
+@media(max-width:820px){.p3-open{grid-template-columns:1fr}}

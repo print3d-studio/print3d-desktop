@@ -89,6 +89,16 @@ static json home_page_strings()
         {"clear_all", _u8L("Clear all")},
         {"remove", _u8L("Remove")},
         {"show_in_folder", _u8L("Show in folder")},
+        {"home_title", _u8L("Home")},
+        {"home_lead", _u8L("Every project you open or save shows up here with a picture, so you can get back to it in one click.")},
+        {"open_a_project", _u8L("Open A Project")},
+        {"open_a_project_desc", _u8L("Pick a 3MF, STL, STEP or OBJ file from your computer.")},
+        {"new_project_desc", _u8L("Start with an empty plate.")},
+        // TRN Button that starts a new, empty project from the Home page.
+        {"home_start", _u8L("Start")},
+        {"your_builds", _u8L("Your Builds")},
+        {"nothing_here_yet", _u8L("Nothing Here Yet")},
+        {"nothing_here_yet_desc", _u8L("Open a project or start a new one. It will show up here.")},
     };
 }
 

@@ -7,6 +7,8 @@
 <title>homepage</title>
 <link rel="stylesheet" type="text/css" href="../include/global.css" />	<!-- ORCA One for all-->
 <link rel="stylesheet" type="text/css" href="./css/home.css" />
+<link rel="stylesheet" type="text/css" href="../print3d/print3d.css" />
+<link rel="stylesheet" type="text/css" href="./css/print3d-home.css" />
 <!-- <link rel="stylesheet" type="text/css" href="./css/dark.css" />	 -->
 
 <script type="text/javascript" src="../include/jquery-3.6.0.min.js"></script>
@@ -19,7 +21,7 @@
 	
 <script type="text/javascript" src="js/home.js"></script>
 </head>
-<body class="thin-scroll" onLoad="OnInit()">
+<body class="p3" onLoad="OnInit()">
 <div id="LeftBoard">
 	<div id="LoginArea">
 
@@ -101,9 +103,21 @@
 	</div>
 </div>
 
-<div id="RightBoard">
-<div id="ContentBoard" class="thin-scroll" board="recent">
-    <div style="height: 14px;"></div>	
+<div id="RightBoard" class="p3-page p3-scroll">
+<div id="ContentBoard" class="p3-mid" board="recent">
+	<h1 class="p3-title" data-i18n="home_title">Home</h1>
+	<p class="p3-lead" data-i18n="home_lead">Every project you open or save shows up here with a picture, so you can get back to it in one click.</p>
+	<div class="p3-open">
+		<div class="p3-card p3-drop" role="button" tabindex="0" onClick="OnClickOpenProject()">
+			<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 15V4M7 9l5-5 5 5M4 15v3a2 2 0 002 2h12a2 2 0 002-2v-3"/></svg>
+			<b data-i18n="open_a_project">Open A Project</b>
+			<span data-i18n="open_a_project_desc">Pick a 3MF, STL, STEP or OBJ file from your computer.</span>
+		</div>
+		<div class="p3-card p3-side">
+			<div class="p3-row"><div><b data-i18n="new_project">New Project</b><span data-i18n="new_project_desc">Start with an empty plate.</span></div>
+				<div class="p3-btn sm" role="button" tabindex="0" onClick="OnClickNewProject()" style="flex:none"><span data-i18n="home_start">Start</span> <span class="chev">&rsaquo;</span></div></div>
+		</div>
+	</div>
 	<div id="MenuArea">
 <!--		<div class="MenuItem" onClick="OnClickModelDepot()">
 			<div class="MenuIcon"><img src="img/i6.png"></div>
@@ -131,10 +145,11 @@
 	<div id="DebugText"></div>	
 	<div id="RecentFileArea">
 		<div id="RecentTitleBlock">
-		    <div id="RecentTitle" class="Content-Title TextS1" data-i18n="recently_opened">Recently opened</div>
-			<div id="RecentClearAllBtn" class="ButtonStyleRegular ButtonTypeWindow" onClick="OnDeleteAllRecentFiles()" data-i18n="clear_all">Clear all</div>
+		    <div id="RecentTitle" data-i18n="your_builds">Your Builds</div>
+			<div id="RecentClearAllBtn" onClick="OnDeleteAllRecentFiles()" data-i18n="clear_all">Clear all</div>
 		</div>
-		<div id="FileList" class="thin-scroll">
+		<div id="P3Empty" class="p3-card"><b data-i18n="nothing_here_yet">Nothing Here Yet</b><span data-i18n="nothing_here_yet_desc">Open a project or start a new one. It will show up here.</span></div>
+		<div id="FileList">
 			<!-- EXAMPLE GENERATED BLOCK
 			<div class="FileItem" fpath="sPath">
 				<a class="FileTip" title="sPath"></a>
@@ -178,6 +193,16 @@
 </div>	
 </body>
 <script type="text/javascript">
+	// PRINT3D: follow the app's light or dark theme, and show the empty state when there are no builds.
+	function P3ApplyTheme(){ document.body.classList.toggle("p3-light", !navigator.userAgent.match(/dark/i)); }
+	P3ApplyTheme(); setInterval(P3ApplyTheme, 1000);
+	(function(){ var show = ShowRecentFileList; ShowRecentFileList = function(list){ show(list);
+		document.body.classList.toggle("p3-empty", !list || !list.length);
+		// Cards read as builds, not files: no extension, and a date without the seconds.
+		$(".FileName").each(function(){ $(this).text($(this).text().replace(/\.3mf$/i, "")); });
+		$(".FileDate").each(function(){ $(this).text($(this).text().replace(/^(.*\d{1,2}:\d{2}):\d{2}$/, "$1")); });
+	}; })();
+	document.body.classList.add("p3-empty");
 	//HandleStudio(TestData);
     document.onkeydown = function (event) {
 		var e = event || window.event || arguments.callee.caller.arguments[0];
